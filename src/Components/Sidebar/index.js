@@ -1,36 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Sidebar = () => {
-    const modules = [
-        {
-            id: 1,
-            title: 'Introduction',
-            lessons: [
-                {
-                    id: 1,
-                    name: 'What is React'
-                },
-                {
-                    id: 2,
-                    name: 'Your first component'
-                },
-            ]
-        },
-        {
-            id: 2,
-            title: 'Advanced Topics',
-            lessons: [
-                {
-                    id: 1,
-                    name: 'Stateful Components'
-                },
-                {
-                    id: 2,
-                    name: 'High-Order Components'
-                },
-            ]
-        },
-    ]
+const Sidebar = ({modules}) => {
     return(
         <div>
             {
@@ -57,4 +28,10 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+const mapStateToProps = state => {
+    return { 
+        modules: state.modules 
+    }
+};
+
+export default connect(mapStateToProps)(Sidebar);
