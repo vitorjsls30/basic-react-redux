@@ -7,11 +7,11 @@ import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 
 const store = createStore(rootReducer);
-console.log(store.getState());
+
 function App() {
   return (
     <div>
-      <Provider store={store}>
+      <Provider store={ store }>
         <Video />
         <Sidebar />
       </Provider>

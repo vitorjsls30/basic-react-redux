@@ -40,10 +40,9 @@ const defaultState = {
 function lessonsApp(state=defaultState, action) {
     switch(action.type) {
         case WATCH_LESSON:
-            console.log('case WATCH_LESSON...');
             return {
                 ...state, 
-                currentLesson: { ...action.item }
+                currentLesson: { ...action.payload }
             };
         default:
             return state;
